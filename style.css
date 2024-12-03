@@ -1,0 +1,205 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1c1c1e;
+    color: #f5f5f5;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container padrão */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Banner Principal */
+.main-banner {
+    background: url('banner.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ff6f61;
+}
+
+.main-banner p {
+    font-size: 1.2rem;
+}
+
+/* Cards de Produto */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.product-card {
+    background: #2c2c2e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    color: #ff6f61;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 15px 0;
+    color: #f5f5f5;
+    margin-top: auto;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff3e3e;
+}
+
+/* Formulário */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #2c2c2e;
+    color: #f5f5f5;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #ff6f61, #ff3e3e);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(45deg, #ff3e3e, #ff6f61);
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-banner h1 {
+        font-size: 2rem;
+    }
+
+    .product-card h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .main-banner {
+        height: 250px;
+    }
+
+    .main-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-banner {
+        height: 350px;
+    }
+
+    .main-banner h1 {
+        font-size: 3.5rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.3rem;
+    }
+}
